@@ -1,0 +1,34 @@
+
+Create service to retrieve and echo pages from hbase given a key. php-thrift probably for now.
+
+Use selenium (firefox) to render said page. Record positions for all words on the page. Screenshot the page for display on site.
+
+Hbase mapper maps all urls grouped by domain into reducers.
+
+Reducer runs selenium, loads the page, and records the position (normalized by current window dimensions) of each word
+
+page has an array of word tokens 
+
+-- part of speech tagger: http://nlp.stanford.edu/software/tagger.shtml
+
+-- or this : http://nlp.stanford.edu/software/lex-parser.shtml
+
+-- think of best way to find and differentiate names from the rest of a document. Show up as proper nouns in parser.
+
+-- need a method for differentiating contiguous blocks of text from other fragments on a webpage.
+
+sentences, words, etc.
+
+token (word)
+
+{
+   text,
+   x_coord, (int) - x coordinate on page
+   y_coord, (int) - y coordinate on page
+   max_X, (int) - maximum X value for this page
+   max_Y, (int) - maximum Y value for this page
+   POS (string) - one of the Penn Treebank POS tagset described here : http://acl.ldc.upenn.edu/J/J93/J93-2004.pdf
+   
+}
+
+
