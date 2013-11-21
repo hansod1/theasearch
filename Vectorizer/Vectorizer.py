@@ -22,7 +22,7 @@ def jsonLines(loc):
         for line in content:
             c = d.decode(line)
             if 'text' in c:
-                r.append( e.sub('', c['text']) )
+                r.append( e.sub(' ', c['text']) )
     
     return r
             
